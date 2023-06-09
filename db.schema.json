@@ -1,0 +1,117 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/DBType",
+    "definitions": {
+        "DBType": {
+            "type": "object",
+            "properties": {
+                "games": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Game"
+                    }
+                },
+                "decks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Deck"
+                    }
+                }
+            },
+            "required": [
+                "games",
+                "decks"
+            ],
+            "additionalProperties": false
+        },
+        "Game": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "turns": {
+                    "type": "number"
+                },
+                "video": {
+                    "type": "string"
+                },
+                "versusInfo": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GameVersusInfo"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "date",
+                "turns",
+                "video",
+                "versusInfo"
+            ],
+            "additionalProperties": false
+        },
+        "GameVersusInfo": {
+            "type": "object",
+            "properties": {
+                "player": {
+                    "type": "string"
+                },
+                "deckId": {
+                    "type": "string"
+                },
+                "startFirst": {
+                    "type": "boolean"
+                },
+                "win": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "player",
+                "deckId"
+            ],
+            "additionalProperties": false
+        },
+        "Deck": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "player": {
+                    "type": "string"
+                },
+                "characterCards": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "actionCards": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "player",
+                "characterCards",
+                "actionCards"
+            ],
+            "additionalProperties": false
+        }
+    }
+}
