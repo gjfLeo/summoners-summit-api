@@ -2,9 +2,9 @@
   "name": "json-server-vercel",
   "version": "1.0.0",
   "description": "Deploy JSON Server to Vercel",
-  "main": "server/index.ts",
+  "main": "api/server.ts",
   "scripts": {
-    "start": "ts-node server/index.ts",
+    "start": "ts-node api/server.ts",
     "lint": "eslint . --fix"
   },
   "dependencies": {
