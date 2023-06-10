@@ -1,5 +1,6 @@
 export interface DBType {
     games: Game[];
+    gamePlayers: GamePlayer[];
     decks: Deck[];
 }
 
@@ -9,11 +10,11 @@ interface Game {
     date: string;
     turns: number;
     video: string;
-    versusInfo: [GameVersusInfo, GameVersusInfo];
 }
 
-interface GameVersusInfo {
-    player: string;
+interface GamePlayer {
+    gameId: string;
+    name: string;
     deckId: string;
     startFirst: boolean | undefined;
     win: boolean | undefined;
@@ -21,9 +22,6 @@ interface GameVersusInfo {
 
 interface Deck {
     id: string;
-    player: string;
     characterCards: string[];
-    actionCards: Record<ActionCardName, number>;
+    actionCards: Record<string, number>;
 }
-
-type ActionCardName = string;

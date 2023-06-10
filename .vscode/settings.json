@@ -1,10 +1,18 @@
 {
-    "json.schemas": [
-        {
-            "fileMatch": [
-                "/db.json"
-            ],
-            "url": "/db.schema.json"
-        }
-    ]
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/db.json",
+      ],
+      "url": "/db.schema.json",
+    },
+  ],
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
 }
